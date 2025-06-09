@@ -15,7 +15,7 @@ from threading import Thread, Lock
 from dotenv import load_dotenv
 from pyrogram import Client, enums
 from asyncio import get_event_loop
-from megasdkrestclient import MegaSdkRestClient, errors as mega_err
+#from megasdkrestclient import MegaSdkRestClient, errors as mega_err
 
 main_loop = get_event_loop()
 
@@ -260,7 +260,7 @@ def aria2c_init():
         log_error(f"Aria2c initializing error: {e}")
 Thread(target=aria2c_init).start()
 
-try:
+"""try:
     MEGA_KEY = getConfig('MEGA_API_KEY')
     if len(MEGA_KEY) == 0:
         raise KeyError
@@ -284,7 +284,7 @@ if MEGA_KEY is not None:
     except:
         log_info("Mega API KEY provided but credentials not provided. Starting mega in anonymous mode!")
 else:
-    sleep(1.5)
+    sleep(1.5)"""
 
 try:
     BASE_URL = getConfig('BASE_URL_OF_BOT').rstrip("/")
@@ -410,13 +410,13 @@ try:
     LEECH_LIMIT = float(LEECH_LIMIT)
 except:
     LEECH_LIMIT = None
-try:
+"""try:
     MEGA_LIMIT = getConfig('MEGA_LIMIT')
     if len(MEGA_LIMIT) == 0:
         raise KeyError
     MEGA_LIMIT = float(MEGA_LIMIT)
 except:
-    MEGA_LIMIT = None
+    MEGA_LIMIT = None"""
 try:
     TOTAL_TASKS_LIMIT = getConfig('TOTAL_TASKS_LIMIT')
     if len(TOTAL_TASKS_LIMIT) == 0:
