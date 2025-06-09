@@ -2,7 +2,7 @@
 
 from random import random, choice
 
-from cfscrape import create_scraper
+import cloudscraper
 from base64 import b64encode
 from urllib.parse import quote, unquote
 from urllib3 import disable_warnings
@@ -14,7 +14,7 @@ def short_url(longurl):
     if SHORTENER is None and SHORTENER_API is None:
         return longurl
     try:
-        cget = create_scraper().get
+        cget = cloudscraper.create_scraper().get
         try:
             unquote(longurl).encode('ascii')
             if "{" in unquote(longurl) or "}" in unquote(longurl):
