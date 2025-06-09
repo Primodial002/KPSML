@@ -18,7 +18,6 @@ from time import sleep, time
 from base64 import b64decode
 from urllib.parse import urlparse, unquote, parse_qs
 from json import loads as jsonloads
-from lk21 import Bypass
 from lxml import etree
 from cfscrape import create_scraper
 import cloudscraper
